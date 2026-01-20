@@ -510,6 +510,13 @@ extension Publisher {
     }
 }
 
+// MARK: - CGFloat
+
+extension CGFloat {
+    /// The minimum height for compact slider labels.
+    static let compactSliderMinHeight: CGFloat = 22
+}
+
 // MARK: - Sequence where Element == MenuBarItem
 
 extension Sequence where Element == MenuBarItem {

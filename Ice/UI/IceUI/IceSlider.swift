@@ -45,15 +45,15 @@ struct IceSlider<Value: BinaryFloatingPoint, ValueLabel: View, ValueLabelSelecta
     }
 
     var body: some View {
-        CompactSlider(
-            value: value,
-            in: bounds,
-            step: step,
-            handleVisibility: .hovering(width: 1)
-        ) {
+        VStack(alignment: .leading, spacing: 4) {
+            CompactSlider(
+                value: value,
+                in: bounds,
+                step: step
+            )
             valueLabel
                 .textSelection(valueLabelSelectability)
         }
-        .compactSliderDisabledHapticFeedback(true)
+        .compactSliderOptionsByRemoving(.enabledHapticFeedback)
     }
 }
