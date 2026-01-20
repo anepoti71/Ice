@@ -1,0 +1,117 @@
+{
+  "": {
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/master.swiftdeps"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/CGFloat.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CGFloat.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CGFloat.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CGFloat~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CGFloat.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CGFloat.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/Color.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/Color.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/Color.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/Color~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/Color.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/Color.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/CompactSlider.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSlider.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSlider.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSlider~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSlider.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSlider.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/CompactSliderState.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderState.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderState.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderState~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderState.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderState.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/CompactSliderStyle.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderStyle.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderStyle.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderStyle~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderStyle.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/CompactSliderStyle.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/DefaultCompactSliderStyle.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/DefaultCompactSliderStyle.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/DefaultCompactSliderStyle.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/DefaultCompactSliderStyle~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/DefaultCompactSliderStyle.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/DefaultCompactSliderStyle.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/GestureOption.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/GestureOption.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/GestureOption.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/GestureOption~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/GestureOption.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/GestureOption.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/HandleView.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleView.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleView.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleView~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleView.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleView.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/HandleVisibility.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleVisibility.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleVisibility.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleVisibility~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleVisibility.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HandleVisibility.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/HapticFeedback.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HapticFeedback.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HapticFeedback.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HapticFeedback~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HapticFeedback.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/HapticFeedback.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/ProgressView.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProgressView.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProgressView.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProgressView~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProgressView.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProgressView.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/ProminentCompactSliderStyle.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProminentCompactSliderStyle.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProminentCompactSliderStyle.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProminentCompactSliderStyle~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProminentCompactSliderStyle.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ProminentCompactSliderStyle.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/ScaleView.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScaleView.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScaleView.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScaleView~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScaleView.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScaleView.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/ScrollWheelModifier.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScrollWheelModifier.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScrollWheelModifier.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScrollWheelModifier~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScrollWheelModifier.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/ScrollWheelModifier.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider/Sources/CompactSlider/SecondaryAppearance.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/SecondaryAppearance.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/SecondaryAppearance.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/SecondaryAppearance~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/SecondaryAppearance.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/SecondaryAppearance.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/resource_bundle_accessor.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/CompactSlider.build/resource_bundle_accessor.dia"
+  }
+}

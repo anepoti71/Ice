@@ -14,7 +14,9 @@ struct MenuBarAppearanceSettingsPane: View {
     }
 }
 
+#if DEBUG && canImport(PreviewsMacros) && !SWIFT_PACKAGE
 #Preview {
     MenuBarAppearanceSettingsPane()
         .environmentObject(AppState())
 }
+#endif

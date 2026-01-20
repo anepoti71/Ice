@@ -1,0 +1,54 @@
+{
+  "": {
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/master.swiftdeps"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/AXSwift.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/AXSwift.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/AXSwift.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/AXSwift~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/AXSwift.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/AXSwift.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/Application.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Application.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Application.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Application~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Application.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Application.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/Constants.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Constants.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Constants.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Constants~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Constants.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Constants.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/Error.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Error.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Error.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Error~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Error.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Error.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/Observer.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Observer.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Observer.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Observer~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Observer.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/Observer.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/SystemWideElement.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/SystemWideElement.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/SystemWideElement.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/SystemWideElement~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/SystemWideElement.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/SystemWideElement.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/AXSwift/Sources/UIElement.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/UIElement.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/UIElement.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/UIElement~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/UIElement.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/AXSwift.build/UIElement.dia"
+  }
+}

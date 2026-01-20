@@ -60,8 +60,14 @@ final class UpdatesManager: NSObject, ObservableObject {
 
     /// Sets up the manager.
     func performSetup() {
+#if SWIFT_PACKAGE
+        canCheckForUpdates = false
+        lastUpdateCheckDate = nil
+        return
+#else
         _ = updaterController
         configureCancellables()
+#endif
     }
 
     /// Configures the internal observers for the manager.
@@ -74,7 +80,11 @@ final class UpdatesManager: NSObject, ObservableObject {
 
     /// Checks for app updates.
     @objc func checkForUpdates() {
-        #if DEBUG
+        #if SWIFT_PACKAGE
+        let alert = NSAlert()
+        alert.messageText = "Updates are disabled in this build."
+        alert.runModal()
+        #elseif DEBUG
         // Checking for updates hangs in debug mode.
         let alert = NSAlert()
         alert.messageText = "Checking for updates is not supported in debug mode."

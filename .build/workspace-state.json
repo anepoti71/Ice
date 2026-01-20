@@ -1,0 +1,114 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "sparkle",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/sparkle-project/Sparkle",
+          "name" : "Sparkle"
+        },
+        "path" : "/Users/anepoti/workspace/experiments/Ice/.build/artifacts/sparkle/Sparkle/Sparkle.xcframework",
+        "source" : {
+          "checksum" : "995f913935fe903d50b3be5344fc52a638f56b39ef7984bf7a44244786d28638",
+          "type" : "remote",
+          "url" : "https://github.com/sparkle-project/Sparkle/releases/download/2.8.1/Sparkle-for-Swift-Package-Manager.zip"
+        },
+        "targetName" : "Sparkle"
+      }
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "axswift",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/tmandry/AXSwift",
+          "name" : "AXSwift"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "81dcc36aced905d6464cc25e35f8d13184bbf21c",
+            "version" : "0.3.2"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "AXSwift"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "compactslider",
+          "kind" : "fileSystem",
+          "location" : "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider",
+          "name" : "CompactSlider"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/anepoti/workspace/experiments/Ice/Vendor/CompactSlider"
+        },
+        "subpath" : "compactslider"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "ifrit",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/ukushu/Ifrit",
+          "name" : "Ifrit"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "3f961f6d39cd2188305671f2ec65914d297571d0",
+            "version" : "2.0.6"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "Ifrit"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "launchatlogin-modern",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/sindresorhus/LaunchAtLogin-Modern",
+          "name" : "LaunchAtLogin"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "a04ec1c363be3627734f6dad757d82f5d4fa8fcc",
+            "version" : "1.1.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "LaunchAtLogin-Modern"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "sparkle",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/sparkle-project/Sparkle",
+          "name" : "Sparkle"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "5581748cef2bae787496fe6d61139aebe0a451f6",
+            "version" : "2.8.1"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "Sparkle"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

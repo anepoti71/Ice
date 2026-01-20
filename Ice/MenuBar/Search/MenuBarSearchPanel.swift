@@ -355,9 +355,17 @@ private struct BottomBarButton<Content: View>: View {
 private struct SettingsButton: View {
     let action: () -> Void
 
+    private var iconImage: Image {
+        if let nsImage = NSImage.iceImage(named: "IceCubeStroke") {
+            Image(nsImage: nsImage)
+        } else {
+            Image(systemName: "questionmark.square.dashed")
+        }
+    }
+
     var body: some View {
         BottomBarButton(action: action) {
-            Image(.iceCubeStroke)
+            iconImage
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 18, height: 18)

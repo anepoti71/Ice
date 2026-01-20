@@ -33,7 +33,11 @@ extension View {
                         )
                 }
             } else {
-                Color.defaultLayoutBar
+                #if SWIFT_PACKAGE
+                Color("DefaultLayoutBarColor", bundle: .module)
+                #else
+                Color("DefaultLayoutBarColor")
+                #endif
             }
         }
         .overlay {

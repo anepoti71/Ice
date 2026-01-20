@@ -415,6 +415,33 @@ extension NSImage {
         resizedImage.isTemplate = isTemplate
         return resizedImage
     }
+
+    /// A system warning icon, falling back to an empty image if unavailable.
+    static var warning: NSImage {
+        NSImage(named: NSImage.cautionName) ?? NSImage()
+    }
+
+    /// Loads a named image from the SwiftPM module bundle or main bundle.
+    static func iceImage(named name: String) -> NSImage? {
+        #if SWIFT_PACKAGE
+        if let image = Bundle.module.image(forResource: NSImage.Name(name)) {
+            return image
+        }
+        if let url = Bundle.module.url(forResource: name, withExtension: "png"),
+           let image = NSImage(contentsOf: url) {
+            return image
+        }
+        if let image = Bundle.main.image(forResource: NSImage.Name(name)) {
+            return image
+        }
+        if let url = Bundle.main.url(forResource: name, withExtension: "png") {
+            return NSImage(contentsOf: url)
+        }
+        return nil
+        #else
+        return NSImage(named: name)
+        #endif
+    }
 }
 
 // MARK: - NSScreen

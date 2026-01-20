@@ -11,7 +11,7 @@ enum IconResource: Hashable {
     case systemSymbol(_ name: String)
 
     /// A resource derived from an asset catalog.
-    case assetCatalog(_ resource: ImageResource)
+    case assetCatalog(_ name: String)
 
     /// The view produced by the resource.
     @ViewBuilder
@@ -26,8 +26,12 @@ enum IconResource: Hashable {
         switch self {
         case .systemSymbol(let name):
             Image(systemName: name)
-        case .assetCatalog(let resource):
-            Image(resource)
+        case .assetCatalog(let name):
+            if let nsImage = NSImage.iceImage(named: name) {
+                Image(nsImage: nsImage)
+            } else {
+                Image(systemName: "questionmark.square.dashed")
+            }
         }
     }
 }

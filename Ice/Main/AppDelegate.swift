@@ -22,6 +22,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Allow the app to set the cursor in the background.
         appState.setsCursorInBackground = true
+
+        #if SWIFT_PACKAGE
+        if let icon = NSImage.iceImage(named: "icon_512x512") {
+            NSApp.applicationIconImage = icon
+        }
+        #endif
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {

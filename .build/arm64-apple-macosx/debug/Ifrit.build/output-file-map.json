@@ -1,0 +1,124 @@
+{
+  "": {
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/master.swiftdeps"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/Fuse+/Fuse+ArrObjects.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrObjects.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrObjects.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrObjects~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrObjects.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrObjects.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/Fuse+/Fuse+ArrStrings.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrStrings.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrStrings.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrStrings~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrStrings.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+ArrStrings.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/Fuse+/Fuse+FuseProps.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+FuseProps.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+FuseProps.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+FuseProps~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+FuseProps.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+FuseProps.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/Fuse+/Fuse+String.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+String.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+String.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+String~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+String.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse+String.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/Fuse.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuse.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/FuseProp.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseProp.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseProp.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseProp~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseProp.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseProp.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/FuseUtilities.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseUtilities.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseUtilities.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseUtilities~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseUtilities.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuseUtilities.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Classes/Searchable.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Searchable.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Searchable.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Searchable~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Searchable.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Searchable.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Exts/Array+.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Array+.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Array+.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Array+~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Array+.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Array+.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Exts/String+Fuse.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+Fuse.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+Fuse.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+Fuse~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+Fuse.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+Fuse.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/FuzzyFind/Alignment.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Alignment.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Alignment.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Alignment~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Alignment.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Alignment.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/FuzzyFind/Fuzzy.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuzzy.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuzzy.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuzzy~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuzzy.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Fuzzy.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/FuzzyFind/FuzzyResult.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResult.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResult.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResult~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResult.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResult.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/FuzzyFind/FuzzyResultSegment.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResultSegment.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResultSegment.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResultSegment~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResultSegment.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/FuzzyResultSegment.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/FuzzyFind/Score.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Score.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Score.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Score~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Score.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Score.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/Levenstain.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Levenstain.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Levenstain.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Levenstain~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Levenstain.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/Levenstain.dia"
+  },
+  "/Users/anepoti/workspace/experiments/Ice/.build/checkouts/Ifrit/Sources/Ifrit/Levenstain/String+.swift": {
+    "dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+.d",
+    "object": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+.swift.o",
+    "swiftmodule": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+~partial.swiftmodule",
+    "swift-dependencies": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+.swiftdeps",
+    "diagnostics": "/Users/anepoti/workspace/experiments/Ice/.build/arm64-apple-macosx/debug/Ifrit.build/String+.dia"
+  }
+}
