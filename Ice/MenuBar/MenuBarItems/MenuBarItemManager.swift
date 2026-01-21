@@ -1356,6 +1356,10 @@ extension MenuBarItemManager {
         // Remove all items up to the hidden control item.
         items.trimPrefix { $0.info != .hiddenControlItem }
         // Remove the hidden control item.
+        guard !items.isEmpty else {
+            Logger.itemManager.warning("Missing hidden control item while showing \(item.logString)")
+            return
+        }
         items.removeFirst()
         // Remove all offscreen items.
         items.trimPrefix { !$0.isOnScreen }
