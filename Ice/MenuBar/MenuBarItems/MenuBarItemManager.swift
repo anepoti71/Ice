@@ -1279,6 +1279,13 @@ extension MenuBarItemManager {
 extension MenuBarItemManager {
     /// Gets the destination to return the given item to after it is temporarily shown.
     private func getReturnDestination(for item: MenuBarItem, in items: [MenuBarItem]) -> MoveDestination? {
+        if let index = items.firstIndex(where: { $0.windowID == item.windowID }) {
+            if items.indices.contains(index + 1) {
+                return .leftOfItem(items[index + 1])
+            } else if items.indices.contains(index - 1) {
+                return .rightOfItem(items[index - 1])
+            }
+        }
         let info = item.info
         if let index = items.firstIndex(where: { $0.info == info }) {
             if items.indices.contains(index + 1) {
@@ -1348,19 +1355,23 @@ extension MenuBarItemManager {
 
         var items = MenuBarItem.getMenuBarItems(onScreenOnly: false, activeSpaceOnly: true)
 
-        guard let destination = getReturnDestination(for: item, in: items) else {
-            Logger.itemManager.warning("No return destination for \(item.logString)")
-            return
-        }
-
-        // Remove all items up to the hidden control item.
-        items.trimPrefix { $0.info != .hiddenControlItem }
-        // Remove the hidden control item.
-        guard !items.isEmpty else {
+        let hiddenIdentifier = ControlItem.Identifier.hidden.rawValue
+        let hiddenControlItem = items.first { $0.title == hiddenIdentifier || $0.info == .hiddenControlItem }
+        let fallbackHiddenControlItem = ControlItem.registeredWindowIDs()
+            .compactMap { MenuBarItem(windowID: $0) }
+            .first { $0.info == .hiddenControlItem }
+        let controlItem = hiddenControlItem ?? fallbackHiddenControlItem
+        let destination = getReturnDestination(for: item, in: items)
+            ?? controlItem.map { .leftOfItem($0) }
+        guard let controlItem, let controlFrame = getCurrentFrame(for: controlItem) else {
             Logger.itemManager.warning("Missing hidden control item while showing \(item.logString)")
             return
         }
-        items.removeFirst()
+        guard let destination else {
+            Logger.itemManager.warning("No return destination for \(item.logString)")
+            return
+        }
+        items = items.filter { $0.frame.minX >= controlFrame.maxX - 1 }
         // Remove all offscreen items.
         items.trimPrefix { !$0.isOnScreen }
 
