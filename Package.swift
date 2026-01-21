@@ -28,10 +28,6 @@ let package = Package(
                 .product(name: "IfritStatic", package: "Ifrit"),
             ],
             path: "Ice",
-            exclude: [
-                "Ice.entitlements",
-                "Info.plist",
-            ],
             resources: [
                 .process("Assets.xcassets"),
                 .process("Resources"),

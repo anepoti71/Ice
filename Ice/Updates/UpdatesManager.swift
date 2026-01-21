@@ -115,6 +115,15 @@ extension UpdatesManager: @preconcurrency SPUUpdaterDelegate {
 extension UpdatesManager: @preconcurrency SPUStandardUserDriverDelegate {
     var supportsGentleScheduledUpdateReminders: Bool { true }
 
+    func standardUserDriverWillShowModalAlert() {
+        guard let appState else {
+            return
+        }
+        appState.activate(withPolicy: .regular)
+        appState.eventManager.stopAll()
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
     func standardUserDriverShouldHandleShowingScheduledUpdate(
         _ update: SUAppcastItem,
         andInImmediateFocus immediateFocus: Bool
@@ -134,6 +143,9 @@ extension UpdatesManager: @preconcurrency SPUStandardUserDriverDelegate {
         guard let appState else {
             return
         }
+        if handleShowingUpdate {
+            appState.activate(withPolicy: .regular)
+        }
         if !state.userInitiated {
             appState.userNotificationManager.addRequest(
                 with: .updateCheck,
@@ -148,6 +160,14 @@ extension UpdatesManager: @preconcurrency SPUStandardUserDriverDelegate {
             return
         }
         appState.userNotificationManager.removeDeliveredNotifications(with: [.updateCheck])
+    }
+
+    func standardUserDriverWillFinishUpdateSession() {
+        guard let appState else {
+            return
+        }
+        appState.eventManager.startAll()
+        appState.deactivate(withPolicy: .accessory)
     }
 }
 
