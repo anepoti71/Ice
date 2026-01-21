@@ -417,7 +417,8 @@ private struct MenuBarSearchItemView: View {
 
     private var image: NSImage? {
         guard
-            let image = imageCache.images[item.info]?.trimmingTransparentPixels(around: [.minXEdge, .maxXEdge]),
+            let image = (imageCache.imagesByWindowID[item.windowID] ?? imageCache.images[item.info])?
+                .trimmingTransparentPixels(around: [.minXEdge, .maxXEdge]),
             let screen = imageCache.screen
         else {
             return nil

@@ -60,15 +60,17 @@ bundle: build
 	fi
 	@if [ -n "$(INSTALL_NAME_TOOL)" ]; then "$(INSTALL_NAME_TOOL)" -add_rpath "@executable_path/../Frameworks" "$(APP_PATH)/Contents/MacOS/$(APP_NAME)" || true; fi
 
+SIGN_IDENTITY ?= Mac Developer: ALESSANDRO NEPOTI (3VPR4FCRV8)
+
 sign: bundle
 	@test -n "$(CODESIGN)" || (echo "codesign not found." && exit 1)
-	"$(CODESIGN)" --force --deep --sign - "$(APP_PATH)"
+	"$(CODESIGN)" --force --deep --sign "$(SIGN_IDENTITY)" --entitlements "Packaging/Ice.entitlements" "$(APP_PATH)"
 
 run: sign
 	"$(OPEN)" "$(APP_PATH)"
 
 install: sign
-	cp -R "$(APP_PATH)" "/Applications/$(APP_NAME) Dev.app"
+	cp -R "$(APP_PATH)" "/Applications/$(APP_NAME).app"
 
 clean:
 	rm -rf "$(BUILD_DIR)" "$(APP_PATH)"

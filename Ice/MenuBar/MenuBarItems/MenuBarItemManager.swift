@@ -335,8 +335,28 @@ extension MenuBarItemManager {
 
         var items = MenuBarItem.getMenuBarItems(onScreenOnly: false, activeSpaceOnly: true)
 
-        let hiddenControlItem = items.firstIndex(matching: .hiddenControlItem).map { items.remove(at: $0) }
-        let alwaysHiddenControlItem = items.firstIndex(matching: .alwaysHiddenControlItem).map { items.remove(at: $0) }
+        // Find control items by matching their window title to the expected identifier.
+        // We can't use MenuBarItemInfo matching because NSStatusItem windows report
+        // a different owner PID (Control Center) than Ice's process, causing the
+        // namespace to be wrong. We also can't use window ID matching because
+        // NSWindow.windowNumber may return invalid values for deferred windows.
+        let hiddenControlItem: MenuBarItem?
+        let hiddenIdentifier = ControlItem.Identifier.hidden.rawValue
+        if let index = items.firstIndex(where: { $0.title == hiddenIdentifier }) {
+            hiddenControlItem = items.remove(at: index)
+        } else {
+            // Fallback to matching by info (for backward compatibility)
+            hiddenControlItem = items.firstIndex(matching: .hiddenControlItem).map { items.remove(at: $0) }
+        }
+
+        let alwaysHiddenControlItem: MenuBarItem?
+        let alwaysHiddenIdentifier = ControlItem.Identifier.alwaysHidden.rawValue
+        if let index = items.firstIndex(where: { $0.title == alwaysHiddenIdentifier }) {
+            alwaysHiddenControlItem = items.remove(at: index)
+        } else {
+            // Fallback to matching by info (for backward compatibility)
+            alwaysHiddenControlItem = items.firstIndex(matching: .alwaysHiddenControlItem).map { items.remove(at: $0) }
+        }
 
         guard let hiddenControlItem else {
             Logger.itemManager.warning("Missing control item for hidden section")
@@ -639,17 +659,18 @@ extension MenuBarItemManager {
         guard let currentFrame = getCurrentFrame(for: item) else {
             throw EventError(code: .invalidItem, item: item)
         }
+        let tolerance: CGFloat = 2.0
         switch destination {
         case .leftOfItem(let targetItem):
             guard let currentTargetFrame = getCurrentFrame(for: targetItem) else {
                 throw EventError(code: .invalidItem, item: targetItem)
             }
-            return currentFrame.maxX == currentTargetFrame.minX
+            return abs(currentFrame.maxX - currentTargetFrame.minX) <= tolerance
         case .rightOfItem(let targetItem):
             guard let currentTargetFrame = getCurrentFrame(for: targetItem) else {
                 throw EventError(code: .invalidItem, item: targetItem)
             }
-            return currentFrame.minX == currentTargetFrame.maxX
+            return abs(currentFrame.minX - currentTargetFrame.maxX) <= tolerance
         }
     }
 

@@ -176,7 +176,7 @@ extension Bridging {
     ///
     /// - Parameter option: Options that filter the returned list.
     static func getWindowList(option: WindowListOption = []) -> [CGWindowID] {
-        let list = if option.contains(.menuBarItems) {
+        var list = if option.contains(.menuBarItems) {
             if option.contains(.onScreen) {
                 getOnScreenMenuBarWindowList()
             } else {
@@ -187,11 +187,19 @@ extension Bridging {
         } else {
             getWindowList()
         }
-        return if option.contains(.activeSpace) {
-            list.filter(isWindowOnActiveSpace)
-        } else {
-            list
+        if option.contains(.menuBarItems), list.isEmpty {
+            let fallbackWindows = WindowInfo.getOnScreenWindows(excludeDesktopWindows: true)
+                .filter { $0.isMenuBarItem }
+            list = fallbackWindows.map(\.windowID)
         }
+        if option.contains(.activeSpace) {
+            let filtered = list.filter(isWindowOnActiveSpace)
+            if option.contains(.menuBarItems), filtered.isEmpty {
+                return list
+            }
+            return filtered
+        }
+        return list
     }
 }
 

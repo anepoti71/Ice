@@ -9,6 +9,20 @@ import Combine
 /// A status item that controls a section in the menu bar.
 @MainActor
 final class ControlItem {
+    private nonisolated(unsafe) static var windowIDMap = [CGWindowID: Identifier]()
+    private static let windowIDMapLock = NSLock()
+
+    nonisolated static func identifier(for windowID: CGWindowID) -> Identifier? {
+        windowIDMapLock.lock()
+        defer { windowIDMapLock.unlock() }
+        return windowIDMap[windowID]
+    }
+
+    nonisolated static func registeredWindowIDs() -> [CGWindowID] {
+        windowIDMapLock.lock()
+        defer { windowIDMapLock.unlock() }
+        return Array(windowIDMap.keys)
+    }
     /// Possible identifiers for control items.
     enum Identifier: String, CaseIterable {
         case iceIcon = "SItem"
@@ -66,7 +80,18 @@ final class ControlItem {
         guard let window else {
             return nil
         }
-        return CGWindowID(window.windowNumber)
+        let windowNumber = window.windowNumber
+        if windowNumber > 0, let windowID = UInt32(exactly: windowNumber) {
+            return CGWindowID(windowID)
+        }
+
+        let matches = WindowInfo.getOnScreenWindows(excludeDesktopWindows: true)
+            .filter { windowInfo in
+                windowInfo.isMenuBarItem &&
+                windowInfo.ownerPID == getpid() &&
+                windowInfo.title == identifier.rawValue
+            }
+        return matches.first?.windowID
     }
 
     /// A Boolean value that indicates whether the control item serves as
@@ -217,12 +242,19 @@ final class ControlItem {
             .sink { [weak self] frame in
                 guard
                     let self,
-                    let screen = window?.screen,
+                    let window,
+                    let screen = window.screen,
                     screen.frame.intersects(frame)
                 else {
                     return
                 }
                 windowFrame = frame
+                // Set the window title to the identifier so kCGWindowName matches
+                // the expected value for menu bar item detection.
+                if window.title != identifier.rawValue {
+                    window.title = identifier.rawValue
+                }
+                cacheWindowID()
             }
             .store(in: &c)
 
@@ -327,6 +359,18 @@ final class ControlItem {
         }
         button.target = self
         button.action = #selector(performAction)
+        // Set multiple title properties to ensure kCGWindowName picks up the identifier.
+        // Different macOS versions may read from different sources.
+        button.title = identifier.rawValue
+        button.setAccessibilityTitle(identifier.rawValue)
+        button.setAccessibilityIdentifier(identifier.rawValue)
+        button.imagePosition = .imageOnly
+        // Also set the window title after a short delay to ensure the window exists.
+        DispatchQueue.main.async { [weak self] in
+            guard let self, let window else { return }
+            window.title = identifier.rawValue
+            cacheWindowID()
+        }
     }
 
     /// Updates the appearance of the status item using the given hiding state.
@@ -384,6 +428,16 @@ final class ControlItem {
                 }
             }
         }
+        cacheWindowID()
+    }
+
+    private func cacheWindowID() {
+        guard let windowID else {
+            return
+        }
+        ControlItem.windowIDMapLock.lock()
+        ControlItem.windowIDMap[windowID] = identifier
+        ControlItem.windowIDMapLock.unlock()
     }
 
     /// Performs the control item's action.

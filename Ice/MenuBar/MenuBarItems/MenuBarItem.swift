@@ -194,13 +194,46 @@ extension MenuBarItem {
             }
         }
 
-        return Bridging.getWindowList(option: option).lazy
+        let items = Bridging.getWindowList(option: option)
             .filter(boundsPredicate)
             .compactMap { windowID in
                 MenuBarItem(windowID: windowID)
             }
-            .filter(titlePredicate)
-            .sortedByOrderInMenuBar()
+
+        let registeredWindowIDs = ControlItem.registeredWindowIDs()
+            .filter(boundsPredicate)
+        let existingWindowIDs = Set(items.map(\.windowID))
+        let registeredItems = registeredWindowIDs
+            .filter { !existingWindowIDs.contains($0) }
+            .compactMap { MenuBarItem(windowID: $0) }
+        let mergedItems = items + registeredItems
+
+        var filtered = mergedItems.filter(titlePredicate)
+        if activeSpaceOnly, filtered.isEmpty {
+            filtered = mergedItems
+        }
+
+        let result = filtered.sortedByOrderInMenuBar()
+        if !result.isEmpty {
+            return result
+        }
+
+        let fallbackWindows = WindowInfo.getOnScreenWindows(excludeDesktopWindows: true)
+            .filter { $0.isMenuBarItem }
+        let fallbackItems = fallbackWindows.compactMap { MenuBarItem(itemWindow: $0) }
+        let fallbackFiltered: [MenuBarItem]
+        if let display {
+            let displayBounds = CGDisplayBounds(display)
+            fallbackFiltered = fallbackItems.filter { displayBounds.intersects($0.frame) }
+        } else {
+            fallbackFiltered = fallbackItems
+        }
+        let fallbackTitled = activeSpaceOnly ? fallbackFiltered.filter(titlePredicate) : fallbackFiltered
+        let fallbackResult = fallbackTitled.sortedByOrderInMenuBar()
+        if activeSpaceOnly, fallbackResult.isEmpty {
+            return fallbackFiltered.sortedByOrderInMenuBar()
+        }
+        return fallbackResult
     }
 }
 
@@ -226,15 +259,28 @@ private extension MenuBarItemInfo {
     /// it is a valid menu bar item window. Only call this initializer if you are
     /// certain that the window is valid.
     init(uncheckedItemWindow itemWindow: WindowInfo) {
-        if let bundleIdentifier = itemWindow.owningApplication?.bundleIdentifier {
+        // Check if the window belongs to Ice first (by comparing process IDs),
+        // because NSRunningApplication(processIdentifier:) can sometimes return
+        // the wrong application for status item windows.
+        if itemWindow.ownerPID == getpid(),
+           let identifier = ControlItem.identifier(for: itemWindow.windowID) {
+            if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                self.namespace = Namespace(bundleIdentifier)
+            } else {
+                self.namespace = .null
+            }
+            self.title = identifier.rawValue
+            return
+        }
+
+        if itemWindow.ownerPID == getpid(),
+           let bundleIdentifier = Bundle.main.bundleIdentifier {
+            self.namespace = Namespace(bundleIdentifier)
+        } else if let bundleIdentifier = itemWindow.owningApplication?.bundleIdentifier {
             self.namespace = Namespace(bundleIdentifier)
         } else {
             self.namespace = .null
         }
-        if let title = itemWindow.title {
-            self.title = title
-        } else {
-            self.title = ""
-        }
+        self.title = itemWindow.title ?? ""
     }
 }

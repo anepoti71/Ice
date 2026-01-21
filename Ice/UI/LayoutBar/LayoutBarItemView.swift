@@ -90,15 +90,36 @@ final class LayoutBarItemView: NSView {
         var c = Set<AnyCancellable>()
 
         if let appState {
-            appState.imageCache.$images
-                .sink { [weak self] images in
-                    guard
-                        let self,
-                        let cgImage = images[item.info]
-                    else {
-                        return
-                    }
+            let updateImage: () -> Void = { [weak self] in
+                guard let self, let appState = self.appState else {
+                    return
+                }
+                let cgImage = appState.imageCache.imagesByWindowID[item.windowID] ??
+                    appState.imageCache.images[item.info]
+                if let cgImage {
                     image = NSImage(cgImage: cgImage, size: CGSize(width: cgImage.width, height: cgImage.height))
+                } else if let appIcon = item.owningApplication?.icon {
+                    let thickness = NSStatusBar.system.thickness
+                    let fallbackSize = CGSize(
+                        width: item.frame.width > 0 ? item.frame.width : thickness,
+                        height: item.frame.height > 0 ? item.frame.height : thickness
+                    )
+                    appIcon.isTemplate = false
+                    image = appIcon.resized(to: fallbackSize)
+                } else {
+                    image = nil
+                }
+            }
+
+            appState.imageCache.$images
+                .sink { _ in
+                    updateImage()
+                }
+                .store(in: &c)
+
+            appState.imageCache.$imagesByWindowID
+                .sink { _ in
+                    updateImage()
                 }
                 .store(in: &c)
         }
@@ -123,12 +144,25 @@ final class LayoutBarItemView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         if !isDraggingPlaceholder {
-            image?.draw(
-                in: bounds,
-                from: .zero,
-                operation: .sourceOver,
-                fraction: isEnabled ? 1.0 : 0.67
-            )
+            if let image {
+                if item.info.namespace == .controlCenter {
+                    NSColor.labelColor.setFill()
+                    bounds.fill()
+                    image.draw(
+                        in: bounds,
+                        from: .zero,
+                        operation: .destinationIn,
+                        fraction: isEnabled ? 1.0 : 0.67
+                    )
+                } else {
+                    image.draw(
+                        in: bounds,
+                        from: .zero,
+                        operation: .sourceOver,
+                        fraction: isEnabled ? 1.0 : 0.67
+                    )
+                }
+            }
             if Bridging.responsivity(for: item.ownerPID) == .unresponsive {
                 let warningImage = NSImage.warning
                 let width: CGFloat = 15

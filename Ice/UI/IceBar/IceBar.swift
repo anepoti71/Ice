@@ -384,7 +384,7 @@ private struct IceBarItemView: View {
 
     private var image: NSImage? {
         guard
-            let image = imageCache.images[item.info],
+            let image = imageCache.imagesByWindowID[item.windowID] ?? imageCache.images[item.info],
             let screen = imageCache.screen
         else {
             return nil
