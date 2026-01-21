@@ -7,6 +7,9 @@ EXECUTABLE_PATH := $(BUILD_DIR)/$(CONFIG)/$(APP_NAME)
 RESOURCE_BUNDLE := $(BUILD_DIR)/$(CONFIG)/Ice_Ice.bundle
 RESOURCE_ASSET_CAR := $(RESOURCE_BUNDLE)/Contents/Resources/Assets.car
 ICE_BUNDLE_RESOURCES := $(APP_PATH)/Contents/Resources/Ice_Ice.bundle/Contents/Resources
+ICONSET_SRC := Ice/Assets.xcassets/AppIcon.appiconset
+ICONSET_BUILD := $(APP_DIR)/AppIcon.iconset
+ICON_ICNS := $(APP_DIR)/$(APP_NAME).icns
 SWIFTPM_DIR := .swiftpm
 SWIFTPM_CACHE := $(SWIFTPM_DIR)/cache
 SWIFTPM_CONFIG := $(SWIFTPM_DIR)/configuration
@@ -17,6 +20,7 @@ SWIFT := $(shell xcrun -f swift 2>/dev/null)
 CODESIGN := $(shell xcrun -f codesign 2>/dev/null)
 OPEN := $(shell xcrun -f open 2>/dev/null)
 INSTALL_NAME_TOOL := $(shell xcrun -f install_name_tool 2>/dev/null)
+ICONUTIL := $(shell xcrun -f iconutil 2>/dev/null)
 SWIFT_ENV := SWIFTPM_CACHE_PATH="$(SWIFTPM_CACHE)" SWIFTPM_CONFIG_PATH="$(SWIFTPM_CONFIG)" SWIFTPM_SECURITY_PATH="$(SWIFTPM_SECURITY)" CLANG_MODULE_CACHE_PATH="$(CLANG_MODULE_CACHE)"
 
 .PHONY: all build bundle run sign clean deps verify-tools install
@@ -40,6 +44,14 @@ bundle: build
 	cp "Packaging/Info.plist" "$(APP_PATH)/Contents/Info.plist"
 	cp -R "Ice/Resources/." "$(APP_PATH)/Contents/Resources/"
 	find "Ice/Assets.xcassets" -type f -name "*.png" -exec cp {} "$(APP_PATH)/Contents/Resources/" \;
+	@if [ -n "$(ICONUTIL)" ] && [ -d "$(ICONSET_SRC)" ]; then \
+		mkdir -p "$(ICONSET_BUILD)"; \
+		cp -f "$(ICONSET_SRC)"/*.png "$(ICONSET_BUILD)/"; \
+		"$(ICONUTIL)" -c icns "$(ICONSET_BUILD)" -o "$(ICON_ICNS)"; \
+		cp -f "$(ICON_ICNS)" "$(APP_PATH)/Contents/Resources/"; \
+	else \
+		echo "iconutil or AppIcon.appiconset not found; skipping .icns generation"; \
+	fi
 	@if [ -d "$(RESOURCE_BUNDLE)" ]; then cp -R "$(RESOURCE_BUNDLE)" "$(APP_PATH)/Contents/Resources/"; fi
 	@mkdir -p "$(ICE_BUNDLE_RESOURCES)"
 	@find "Ice/Assets.xcassets" -type f -name "*.png" -exec cp {} "$(ICE_BUNDLE_RESOURCES)/" \;

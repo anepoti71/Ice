@@ -10,6 +10,8 @@
 	<string>Ice</string>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
+	<key>CFBundleIconFile</key>
+	<string>Ice</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.anepoti.Ice</string>
 	<key>CFBundleName</key>
