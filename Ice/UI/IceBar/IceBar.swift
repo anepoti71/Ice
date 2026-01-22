@@ -8,7 +8,7 @@ import SwiftUI
 
 // MARK: - IceBarPanel
 
-final class IceBarPanel: NSPanel {
+final class IceBarPanel: NSPanel, NSWindowDelegate {
     private weak var appState: AppState?
 
     private(set) var currentSection: MenuBarSection.Name?
@@ -16,6 +16,7 @@ final class IceBarPanel: NSPanel {
     private lazy var colorManager = IceBarColorManager(iceBarPanel: self)
 
     private var cancellables = Set<AnyCancellable>()
+    private var isUpdatingOrigin = false
 
     init(appState: AppState) {
         super.init(
@@ -35,6 +36,7 @@ final class IceBarPanel: NSPanel {
         self.hasShadow = false
         self.level = .mainMenu + 1
         self.collectionBehavior = [.fullScreenAuxiliary, .ignoresCycle, .moveToActiveSpace]
+        self.delegate = self
     }
 
     func performSetup() {
@@ -110,6 +112,12 @@ final class IceBarPanel: NSPanel {
                 CGPoint(x: screen.frame.maxX - frame.width, y: originY)
             }
 
+            if let pinnedLocation = appState.settingsManager.generalSettingsManager.iceBarPinnedLocation {
+                let availableWidth = max(screen.frame.width - frame.width, 1)
+                let originX = screen.frame.minX + (availableWidth * pinnedLocation)
+                return CGPoint(x: originX, y: originY)
+            }
+
             switch iceBarLocation {
             case .dynamic:
                 if appState.eventManager.isMouseInsideEmptyMenuBarSpace {
@@ -148,7 +156,9 @@ final class IceBarPanel: NSPanel {
             }
         }
 
+        isUpdatingOrigin = true
         setFrameOrigin(getOrigin(for: appState.settingsManager.generalSettingsManager.iceBarLocation))
+        isUpdatingOrigin = false
     }
 
     func show(section: MenuBarSection.Name, on screen: NSScreen) async {
@@ -186,6 +196,20 @@ final class IceBarPanel: NSPanel {
         contentView = nil
         currentSection = nil
         appState?.navigationState.isIceBarPresented = false
+    }
+
+    func windowDidMove(_ notification: Notification) {
+        guard
+            !isUpdatingOrigin,
+            let appState,
+            let screen
+        else {
+            return
+        }
+        let availableWidth = max(screen.frame.width - frame.width, 1)
+        let ratio = Double((frame.minX - screen.frame.minX) / availableWidth)
+            .clamped(to: 0.0...1.0)
+        appState.settingsManager.generalSettingsManager.iceBarPinnedLocation = ratio
     }
 }
 

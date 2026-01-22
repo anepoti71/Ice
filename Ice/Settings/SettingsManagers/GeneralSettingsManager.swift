@@ -30,6 +30,9 @@ final class GeneralSettingsManager: ObservableObject {
     /// The location where the Ice Bar appears.
     @Published var iceBarLocation: IceBarLocation = .dynamic
 
+    /// The last pinned horizontal position of the Ice Bar, as a 0...1 ratio.
+    @Published var iceBarPinnedLocation: Double?
+
     /// A Boolean value that indicates whether the hidden section
     /// should be shown when the mouse pointer clicks in an empty
     /// area of the menu bar.
@@ -96,6 +99,11 @@ final class GeneralSettingsManager: ObservableObject {
                 iceBarLocation = location
             }
         }
+        Defaults.ifPresent(key: .iceBarPinnedLocation) { (ratio: Double) in
+            if ratio >= 0 && ratio <= 1 {
+                iceBarPinnedLocation = ratio
+            }
+        }
         Defaults.ifPresent(key: .rehideStrategy) { rawValue in
             if let strategy = RehideStrategy(rawValue: rawValue) {
                 rehideStrategy = strategy
@@ -160,6 +168,17 @@ final class GeneralSettingsManager: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { location in
                 Defaults.set(location.rawValue, forKey: .iceBarLocation)
+            }
+            .store(in: &c)
+
+        $iceBarPinnedLocation
+            .receive(on: DispatchQueue.main)
+            .sink { ratio in
+                if let ratio {
+                    Defaults.set(ratio, forKey: .iceBarPinnedLocation)
+                } else {
+                    Defaults.removeObject(forKey: .iceBarPinnedLocation)
+                }
             }
             .store(in: &c)
 
